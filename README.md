@@ -10,5 +10,5 @@
 
 
 Note:
-* The outputs are T+1, T+2 and T+3 forecasts in array, unserialized JSON
+* The outputs are T+1, T+2 and T+3 forecasts in array, unboxed JSON
 * To study the entire flow of this exercise, open *localRun.R*
