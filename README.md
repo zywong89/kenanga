@@ -1,4 +1,4 @@
-# Forecasting 3-Month Crude Palm Oil (CPO) Price - Simple API
+# Forecasting 3-Month Crude Palm Oil (CPO) Prices - Simple API
 
 ## Steps to Start API
 1. Edit ./path/to/your/script in *serve.R*
