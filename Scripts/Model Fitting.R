@@ -37,7 +37,7 @@ modelling <- function(data) {
   
   # Summary of Final Model
   print(final.fit)
-  save("./Model/fittedModel.RData")
+  save(final.fit, file = "./Model/fittedModel.RData")
   
   return(final.fit)
 }
