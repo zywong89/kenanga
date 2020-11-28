@@ -1,7 +1,7 @@
 # Forecasting 3-Month Crude Palm Oil (CPO) Prices - Simple API
 
 ## Steps to Start API
-1. Place entire folder (named Kenanga) in home directory
+1. Place entire folder (named Kenanga) in home directory of local server (e.g. Ubuntu)
 2. Make a copy of *cpo_apirun.py* in Airflow DAGs folder
 3. Start Airflow Admin UI and trigger *cpo_apirun* DAG to run
 
@@ -11,7 +11,7 @@
 
 
 Note:
-* This setup requires PostgreSQL, R, Python and Airflow to be installed in local server (e.g. Ubuntu)
+* This setup requires PostgreSQL, R, Python and Airflow to be installed in local server
 * The outputs displayed in browser are T+1, T+2 and T+3 forecasts in array, unboxed JSON
 * To study the entire flow of this exercise, repeat **Steps to Start API** by copying *cpo_localrun.py* and trigger *cpo_localrun* DAG
 * R console outputs are exported to *~/Kenanga/ROutput.txt*
