@@ -1,0 +1,283 @@
+Model fitting in progress...
+Fitting models p = 0 q = 1 r = 0 s = 1
+Fitting models p = 0 q = 1 r = 0 s = 2
+Fitting models p = 0 q = 1 r = 1 s = 0
+Fitting models p = 0 q = 1 r = 1 s = 1
+Fitting models p = 0 q = 1 r = 1 s = 2
+Fitting models p = 0 q = 1 r = 2 s = 0
+Fitting models p = 0 q = 1 r = 2 s = 1
+Fitting models p = 0 q = 1 r = 2 s = 2
+Fitting models p = 0 q = 2 r = 0 s = 1
+Fitting models p = 0 q = 2 r = 0 s = 2
+Fitting models p = 0 q = 2 r = 1 s = 0
+Fitting models p = 0 q = 2 r = 1 s = 1
+Fitting models p = 0 q = 2 r = 1 s = 2
+Fitting models p = 0 q = 2 r = 2 s = 0
+Fitting models p = 0 q = 2 r = 2 s = 1
+Fitting models p = 0 q = 2 r = 2 s = 2
+Fitting models p = 0 q = 3 r = 0 s = 1
+Fitting models p = 0 q = 3 r = 0 s = 2
+Fitting models p = 0 q = 3 r = 1 s = 0
+Fitting models p = 0 q = 3 r = 1 s = 1
+Fitting models p = 0 q = 3 r = 1 s = 2
+Fitting models p = 0 q = 3 r = 2 s = 0
+Fitting models p = 0 q = 3 r = 2 s = 1
+Fitting models p = 0 q = 3 r = 2 s = 2
+Fitting models p = 1 q = 0 r = 0 s = 1
+Fitting models p = 1 q = 0 r = 0 s = 2
+Fitting models p = 1 q = 0 r = 1 s = 0
+Fitting models p = 1 q = 0 r = 1 s = 1
+Fitting models p = 1 q = 0 r = 1 s = 2
+Fitting models p = 1 q = 0 r = 2 s = 0
+Fitting models p = 1 q = 0 r = 2 s = 1
+Fitting models p = 1 q = 0 r = 2 s = 2
+Fitting models p = 1 q = 1 r = 0 s = 1
+Fitting models p = 1 q = 1 r = 0 s = 2
+Fitting models p = 1 q = 1 r = 1 s = 0
+Fitting models p = 1 q = 1 r = 1 s = 1
+Fitting models p = 1 q = 1 r = 1 s = 2
+Fitting models p = 1 q = 1 r = 2 s = 0
+Fitting models p = 1 q = 1 r = 2 s = 1
+Fitting models p = 1 q = 1 r = 2 s = 2
+Fitting models p = 1 q = 2 r = 0 s = 1
+Fitting models p = 1 q = 2 r = 0 s = 2
+Fitting models p = 1 q = 2 r = 1 s = 0
+Fitting models p = 1 q = 2 r = 1 s = 1
+Fitting models p = 1 q = 2 r = 1 s = 2
+Fitting models p = 1 q = 2 r = 2 s = 0
+Fitting models p = 1 q = 2 r = 2 s = 1
+Fitting models p = 1 q = 2 r = 2 s = 2
+Fitting models p = 1 q = 3 r = 0 s = 1
+Fitting models p = 1 q = 3 r = 0 s = 2
+Fitting models p = 1 q = 3 r = 1 s = 0
+Fitting models p = 1 q = 3 r = 1 s = 1
+Fitting models p = 1 q = 3 r = 1 s = 2
+Fitting models p = 1 q = 3 r = 2 s = 0
+Fitting models p = 1 q = 3 r = 2 s = 1
+Fitting models p = 1 q = 3 r = 2 s = 2
+Fitting models p = 2 q = 0 r = 0 s = 1
+Fitting models p = 2 q = 0 r = 0 s = 2
+Fitting models p = 2 q = 0 r = 1 s = 0
+Fitting models p = 2 q = 0 r = 1 s = 1
+Fitting models p = 2 q = 0 r = 1 s = 2
+Fitting models p = 2 q = 0 r = 2 s = 0
+Fitting models p = 2 q = 0 r = 2 s = 1
+Fitting models p = 2 q = 0 r = 2 s = 2
+Fitting models p = 2 q = 1 r = 0 s = 1
+Fitting models p = 2 q = 1 r = 0 s = 2
+Fitting models p = 2 q = 1 r = 1 s = 0
+Fitting models p = 2 q = 1 r = 1 s = 1
+Fitting models p = 2 q = 1 r = 1 s = 2
+Fitting models p = 2 q = 1 r = 2 s = 0
+Fitting models p = 2 q = 1 r = 2 s = 1
+Fitting models p = 2 q = 1 r = 2 s = 2
+Fitting models p = 2 q = 2 r = 0 s = 1
+Fitting models p = 2 q = 2 r = 0 s = 2
+Fitting models p = 2 q = 2 r = 1 s = 0
+Fitting models p = 2 q = 2 r = 1 s = 1
+Fitting models p = 2 q = 2 r = 1 s = 2
+Fitting models p = 2 q = 2 r = 2 s = 0
+Fitting models p = 2 q = 2 r = 2 s = 1
+Fitting models p = 2 q = 2 r = 2 s = 2
+Fitting models p = 2 q = 3 r = 0 s = 1
+Fitting models p = 2 q = 3 r = 0 s = 2
+Fitting models p = 2 q = 3 r = 1 s = 0
+Fitting models p = 2 q = 3 r = 1 s = 1
+Fitting models p = 2 q = 3 r = 1 s = 2
+Fitting models p = 2 q = 3 r = 2 s = 0
+Fitting models p = 2 q = 3 r = 2 s = 1
+Fitting models p = 2 q = 3 r = 2 s = 2
+Fitting models p = 3 q = 0 r = 0 s = 1
+Fitting models p = 3 q = 0 r = 0 s = 2
+Fitting models p = 3 q = 0 r = 1 s = 0
+Fitting models p = 3 q = 0 r = 1 s = 1
+Fitting models p = 3 q = 0 r = 1 s = 2
+Fitting models p = 3 q = 0 r = 2 s = 0
+Fitting models p = 3 q = 0 r = 2 s = 1
+Fitting models p = 3 q = 0 r = 2 s = 2
+Fitting models p = 3 q = 1 r = 0 s = 1
+Fitting models p = 3 q = 1 r = 0 s = 2
+Fitting models p = 3 q = 1 r = 1 s = 0
+Fitting models p = 3 q = 1 r = 1 s = 1
+Fitting models p = 3 q = 1 r = 1 s = 2
+Fitting models p = 3 q = 1 r = 2 s = 0
+Fitting models p = 3 q = 1 r = 2 s = 1
+Fitting models p = 3 q = 1 r = 2 s = 2
+Fitting models p = 3 q = 2 r = 0 s = 1
+Fitting models p = 3 q = 2 r = 0 s = 2
+Fitting models p = 3 q = 2 r = 1 s = 0
+Fitting models p = 3 q = 2 r = 1 s = 1
+Fitting models p = 3 q = 2 r = 1 s = 2
+Fitting models p = 3 q = 2 r = 2 s = 0
+Fitting models p = 3 q = 2 r = 2 s = 1
+Fitting models p = 3 q = 2 r = 2 s = 2
+Fitting models p = 3 q = 3 r = 0 s = 1
+Fitting models p = 3 q = 3 r = 0 s = 2
+Fitting models p = 3 q = 3 r = 1 s = 0
+Fitting models p = 3 q = 3 r = 1 s = 1
+Fitting models p = 3 q = 3 r = 1 s = 2
+Fitting models p = 3 q = 3 r = 2 s = 0
+Fitting models p = 3 q = 3 r = 2 s = 1
+Fitting models p = 3 q = 3 r = 2 s = 2
+
+*---------------------------------*
+*          GARCH Model Fit        *
+*---------------------------------*
+
+Conditional Variance Dynamics 	
+-----------------------------------
+GARCH Model	: sGARCH(2,1)
+Mean Model	: ARFIMA(3,d,2)
+Distribution	: sged 
+
+Optimal Parameters
+------------------------------------
+          Estimate  Std. Error     t value Pr(>|t|)
+mu     1542.141454    0.466700  3304.35452 0.000000
+ar1      -1.050155    0.000732 -1434.89106 0.000000
+ar2      -0.618000    0.000584 -1058.54793 0.000000
+ar3       0.080498    0.000142   568.71499 0.000000
+ma1       1.578854    0.000668  2364.84615 0.000000
+ma2       1.124040    0.000506  2221.89263 0.000000
+arfima    1.000000          NA          NA       NA
+mxreg1   -0.063426    0.000028 -2294.29459 0.000000
+mxreg2  -34.643078    0.022038 -1572.00511 0.000000
+mxreg3  -57.785467    0.022315 -2589.57682 0.000000
+mxreg4   -0.168472    0.000175  -964.03408 0.000000
+mxreg5    0.271198    0.000115  2349.08150 0.000000
+mxreg6    3.624299    0.004176   867.80787 0.000000
+omega   375.115895  370.378109     1.01279 0.311160
+alpha1    0.052732    0.105249     0.50102 0.616357
+alpha2    0.199442    0.102796     1.94018 0.052358
+beta1     0.746823    0.082618     9.03951 0.000000
+skew      1.045883    0.129401     8.08249 0.000000
+shape     1.539706    0.266381     5.78010 0.000000
+
+Robust Standard Errors:
+          Estimate  Std. Error     t value Pr(>|t|)
+mu     1542.141454   50.712491   30.409499 0.000000
+ar1      -1.050155    0.028471  -36.884990 0.000000
+ar2      -0.618000    0.023074  -26.783405 0.000000
+ar3       0.080498    0.008901    9.043490 0.000000
+ma1       1.578854    0.013751  114.815233 0.000000
+ma2       1.124040    0.003825  293.899726 0.000000
+arfima    1.000000          NA          NA       NA
+mxreg1   -0.063426    0.000468 -135.443192 0.000000
+mxreg2  -34.643078    0.477381  -72.569097 0.000000
+mxreg3  -57.785467    0.775237  -74.539087 0.000000
+mxreg4   -0.168472    0.007722  -21.817057 0.000000
+mxreg5    0.271198    0.002329  116.467456 0.000000
+mxreg6    3.624299    0.194708   18.614037 0.000000
+omega   375.115895  502.410527    0.746632 0.455286
+alpha1    0.052732    1.380371    0.038201 0.969527
+alpha2    0.199442    0.889294    0.224270 0.822547
+beta1     0.746823    0.529235    1.411139 0.158204
+skew      1.045883    0.291935    3.582594 0.000340
+shape     1.539706    0.757708    2.032057 0.042148
+
+LogLikelihood : -974.3033 
+
+Information Criteria
+------------------------------------
+                   
+Akaike       12.722
+Bayes        13.074
+Shibata      12.699
+Hannan-Quinn 12.865
+
+Weighted Ljung-Box Test on Standardized Residuals
+------------------------------------
+                         statistic p-value
+Lag[1]                   6.066e-04 0.98035
+Lag[2*(p+q)+(p+q)-1][14] 8.092e+00 0.16072
+Lag[4*(p+q)+(p+q)-1][24] 1.638e+01 0.07985
+d.o.f=5
+H0 : No serial correlation
+
+Weighted Ljung-Box Test on Standardized Squared Residuals
+------------------------------------
+                         statistic p-value
+Lag[1]                   0.0002406  0.9876
+Lag[2*(p+q)+(p+q)-1][8]  0.6781002  0.9911
+Lag[4*(p+q)+(p+q)-1][14] 1.5513569  0.9971
+d.o.f=3
+
+Weighted ARCH LM Tests
+------------------------------------
+            Statistic Shape Scale P-Value
+ARCH Lag[4]   0.02034 0.500 2.000  0.8866
+ARCH Lag[6]   0.86240 1.461 1.711  0.7875
+ARCH Lag[8]   1.14862 2.368 1.583  0.9013
+
+Nyblom stability test
+------------------------------------
+Joint Statistic:  828.8438
+Individual Statistics:              
+mu     0.07867
+ar1    0.03725
+ar2    0.01180
+ar3    0.06628
+ma1    0.07098
+ma2    0.04050
+mxreg1 0.06214
+mxreg2 0.06431
+mxreg3 0.06127
+mxreg4 0.05810
+mxreg5 0.05832
+mxreg6 0.05705
+omega  0.32729
+alpha1 0.64157
+alpha2 0.48526
+beta1  0.13555
+skew   0.07971
+shape  0.13153
+
+Asymptotic Critical Values (10% 5% 1%)
+Joint Statistic:     	 3.83 4.14 4.73
+Individual Statistic:	 0.35 0.47 0.75
+
+Sign Bias Test
+------------------------------------
+                   t-value   prob sig
+Sign Bias           0.6072 0.5446    
+Negative Sign Bias  0.8052 0.4220    
+Positive Sign Bias  0.6176 0.5378    
+Joint Effect        1.0798 0.7820    
+
+
+Adjusted Pearson Goodness-of-Fit Test:
+------------------------------------
+  group statistic p-value(g-1)
+1    20     20.92       0.3411
+2    30     32.46       0.3000
+3    40     31.18       0.8094
+4    50     50.41       0.4175
+
+
+Elapsed time : 1.348974 
+
+3-step Ahead Monthly Forecasts
+
+Check & drop data.daily_data: TRUE
+
+Insert data into data.daily_data TRUE
+
+data.daily_data: 3369 rows inserted
+
+Check & drop data.monthly_data: TRUE
+
+Insert data into data.monthly_data TRUE
+
+data.monthy_data: 156 rows inserted
+
+Check & drop data.abt: TRUE
+
+Insert data into data.abt TRUE
+
+data.abt: 156 rows inserted
+
+Check & drop result.forecasts: TRUE
+
+Insert data into result.forecasts TRUE
+
+result.forecasts: 1 rows inserted

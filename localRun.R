@@ -1,9 +1,17 @@
+## Set Working Directory
+args <- commandArgs(T)
+setwd(args[1])
+
+
+## Store console output as text
+sink("./ROutput.txt")
+
+
 ## Remove all objects/graphs
 rm(list = ls())
 
 
 ## Read Data
-setwd("./path/to/this/script")
 daily <- read.csv("./Data/Assignment-dailyexcerpt.csv", na.strings = c("", "NA"))
 monthly <- read.csv("./Data/Assignment-monthlyexcerpt.csv", na.strings = c("", "NA"))
 
@@ -57,24 +65,24 @@ for(var in setdiff(colnames(monthly), "dt"))
 
 ## Feature Engineering
 # Create exogeneous variables
-data <- monthly %>% select(dt, pal2maly, topi, noaa, usdmyr, co1, qs1)
+abt <- monthly %>% select(dt, pal2maly, topi, noaa, usdmyr, co1, qs1)
 # Linear trend variable
-data$trend <- 1:nrow(data)
+abt$trend <- 1:nrow(abt)
 # Lagged and differencing variables
-# data$topi.t1 <- lag(data$topi, 1)
-# data$noaa.t1 <- lag(data$noaa, 1)
-# data$usdmyr.t1 <- lag(data$usdmyr, 1)
-# data$usdmyr.d1t1 <- c(NA, lag(diff(data$usdmyr, 1), 1))
-# data$co1.t1 <- lag(data$co1, 1)
-# data$co1.d1t1 <- c(NA, lag(diff(data$co1, 1), 1))
-# data$qs1.t1 <- lag(data$qs1, 1)
-# data$qs1.d1t1 <- c(NA, lag(diff(data$qs1, 1), 1))
-# data <- data %>% select(dt, pal2maly, trend, topi.t1, noaa.t1, usdmyr.t1,
+# abt$topi.t1 <- lag(abt$topi, 1)
+# abt$noaa.t1 <- lag(abt$noaa, 1)
+# abt$usdmyr.t1 <- lag(abt$usdmyr, 1)
+# abt$usdmyr.d1t1 <- c(NA, lag(diff(abt$usdmyr, 1), 1))
+# abt$co1.t1 <- lag(abt$co1, 1)
+# abt$co1.d1t1 <- c(NA, lag(diff(abt$co1, 1), 1))
+# abt$qs1.t1 <- lag(abt$qs1, 1)
+# abt$qs1.d1t1 <- c(NA, lag(diff(abt$qs1, 1), 1))
+# abt <- abt %>% select(dt, pal2maly, trend, topi.t1, noaa.t1, usdmyr.t1,
 #                         usdmyr.t1, usdmyr.d1t1, co1.t1, co1.d1t1,
 #                         qs1.t1, qs1.d1t1)
 # Replace initial NA values with mean
-# for(var in colnames(data[, -1]))
-#   data[is.na(data[, var]), var] <- mean(data[, var], na.rm = T)
+# for(var in colnames(abt[, -1]))
+#   abt[is.na(abt[, var]), var] <- mean(abt[, var], na.rm = T)
 # Exogeneous variables using daily data can be added here if needed
 
 
@@ -82,20 +90,21 @@ data$trend <- 1:nrow(data)
 library(rugarch)
 final.bic <- Inf
 final.order <- c(0, 0, 0, 0)
+cat("Model fitting in progress...", sep = "\n")
 for(p in 0:3) for (q in 0:3) for (r in 0:2) for(s in 0:2) {
   if((p == 0 && q == 0) | (r == 0 && s == 0)) next
-  print(paste("Fitting models p =", p, "q =", q, "r =", r, "s =", s))
+  cat(paste("Fitting models p =", p, "q =", q, "r =", r, "s =", s), sep = "\n")
   
   # Model specification
   spec <- ugarchspec(variance.model = list(garchOrder = c(r, s)),
                      mean.model = list(armaOrder = c(p, q),
-                                       external.regressors = as.matrix(data[, -c(1, 2)]),
+                                       external.regressors = as.matrix(abt[, -c(1, 2)]),
                                        arfima = T),
                      fixed.pars = list(arfima = 1), # Ensure ARIMA(p, 1, q) model
                      distribution.model = "sged") # Allow capturing skewness & fat tail
 
   # Obtain fitting status
-  fit <- tryCatch(ugarchfit(spec, data$pal2maly,
+  fit <- tryCatch(ugarchfit(spec, abt$pal2maly,
                             solver = 'hybrid', fit.control = list(stationarity = 1)),
                   error = function(err) F,
                   warning = function(err) F)
@@ -122,9 +131,9 @@ final.fit
 # Create out-of-sample forecasted exogeneous variables
 library(forecast)
 exovar.out <- NULL
-for(var in colnames(data)[-c(1:2, ncol(data))]) {
+for(var in colnames(abt)[-c(1:2, ncol(abt))]) {
   # Auto-select best ETS smoothing method for each variable
-  fit <- ets(data[, var], model = "ZZZ")
+  fit <- ets(abt[, var], model = "ZZZ")
   fore <- as.numeric(forecast(fit, h = 3)$mean)
   
   # Create data frame of forecasted exogeneous variables
@@ -132,12 +141,87 @@ for(var in colnames(data)[-c(1:2, ncol(data))]) {
   else exovar.out <- cbind(exovar.out, fore)
 }
 # Combine forecasted variables with linear trend
-exovar.out <- cbind(exovar.out, tail(data$trend, 3) + 3)
+exovar.out <- cbind(exovar.out, tail(abt$trend, 3) + 3)
 # Rename columns
-colnames(exovar.out) <- colnames(data)[-c(1:2)]
+colnames(exovar.out) <- colnames(abt)[-c(1:2)]
 
 
-# Produce 3-step Ahead Forecasts
+## Produce 3-step Ahead Forecasts
+cat("3-step Ahead Monthly Forecasts", sep = "\n")
 out <- ugarchforecast(final.fit, n.ahead = 3,
                       external.forecasts = list(mregfore = as.matrix(exovar.out)))
 out@forecast$seriesFor
+
+
+## Store Data in Database
+cat(rep("", 1), sep = "\n")
+cat("Store data in Database...", sep = "\n")
+# Set Up Connection
+library(RPostgreSQL)
+library(sqldf)
+drv <- dbDriver("PostgreSQL")
+con <- dbConnect(drv, dbname = "kenanga",
+                 host = "localhost", port = 5432,
+                 user = "postgres", password = "postgres")
+options(sqldf.RPostgreSQL.dbname = "kenanga",
+        sqldf.RPostgreSQL.host = "localhost",
+        sqldf.RPostgreSQL.port = 5432,
+        sqldf.RPostgreSQL.user = "postgres",
+        sqldf.RPostgreSQL.password = "postgres")
+
+# Insert Data into Database (Drop Table if Exists)
+cat(rep("", 1), sep = "\n")
+if(dbExistsTable(con, c("data", "daily_data"))) {
+  cat(paste("Check & drop data.daily_data:",
+              dbRemoveTable(con, name = c("data", "daily_data"))),sep = "\n")
+}
+cat(rep("", 1), sep = "\n")
+cat(paste("Insert data into data.daily_data",
+            dbWriteTable(con, name = c("data", "daily_data"), value = daily, row.names = F)), sep = "\n")
+cat(rep("", 1), sep = "\n")
+cat(paste("data.daily_data:", sqldf("SELECT count(*) FROM data.daily_data"), "rows inserted"), sep = "\n")
+
+cat(rep("", 1), sep = "\n")
+if(dbExistsTable(con, c("data", "monthly_data"))) {
+  cat(paste("Check & drop data.monthly_data:",
+              dbRemoveTable(con, name = c("data", "monthly_data"))), sep = "\n")
+}
+cat(rep("", 1), sep = "\n")
+cat(paste("Insert data into data.monthly_data",
+            dbWriteTable(con, name = c("data", "monthly_data"), value = monthly, row.names = F)), sep = "\n")
+cat(rep("", 1), sep = "\n")
+cat(paste("data.monthy_data:", sqldf("SELECT count(*) FROM data.monthly_data"), "rows inserted"), sep = "\n")
+
+cat(rep("", 1), sep = "\n")
+if(dbExistsTable(con, c("data", "abt"))) {
+  cat(paste("Check & drop data.abt:",
+              dbRemoveTable(con, name = c("data", "abt"))), sep = "\n")
+}
+cat(rep("", 1), sep = "\n")
+cat(paste("Insert data into data.abt",
+            dbWriteTable(con, name = c("data", "abt"), value = abt, row.names = F)), sep = "\n")
+cat(rep("", 1), sep = "\n")
+cat(paste("data.abt:", sqldf("SELECT count(*) FROM data.abt"), "rows inserted"), sep = "\n")
+
+# Create data frame to store forecast results
+fore <- data.frame(dt = max(abt$dt))
+fore <- cbind(fore, t(out@forecast$seriesFor))
+colnames(fore)[-1] <- c("t1_pal2maly", "t2_pal2maly", "t3_pal2maly")
+cat(rep("", 1), sep = "\n")
+if(dbExistsTable(con, c("result", "forecasts"))) {
+  cat(paste("Check & drop result.forecasts:",
+              dbRemoveTable(con, name = c("result", "forecasts"))), sep = "\n")
+}
+cat(rep("", 1), sep = "\n")
+cat(paste("Insert data into result.forecasts",
+            dbWriteTable(con, name = c("result", "forecasts"), value = fore, row.names = F)), sep = "\n")
+cat(rep("", 1), sep = "\n")
+cat(paste("result.forecasts:", sqldf("SELECT count(*) FROM result.forecasts"), "rows inserted"), sep = "\n")
+
+# Drop Connection
+dbDisconnect(con)
+
+
+## Close Output Sink
+sink()
+cat("Script execution completed!!")

@@ -53,25 +53,25 @@ dataPrep <- function(daily, monthly) {
   
   ## Feature Engineering
   # Create exogeneous variables
-  data <- monthly %>% select(dt, pal2maly, topi, noaa, usdmyr, co1, qs1)
+  abt <- monthly %>% select(dt, pal2maly, topi, noaa, usdmyr, co1, qs1)
   # Linear trend variable
-  data$trend <- 1:nrow(data)
+  abt$trend <- 1:nrow(abt)
   # Lagged and differencing variables
-  # data$topi.t1 <- lag(data$topi, 1)
-  # data$noaa.t1 <- lag(data$noaa, 1)
-  # data$usdmyr.t1 <- lag(data$usdmyr, 1)
-  # data$usdmyr.d1t1 <- c(NA, lag(diff(data$usdmyr, 1), 1))
-  # data$co1.t1 <- lag(data$co1, 1)
-  # data$co1.d1t1 <- c(NA, lag(diff(data$co1, 1), 1))
-  # data$qs1.t1 <- lag(data$qs1, 1)
-  # data$qs1.d1t1 <- c(NA, lag(diff(data$qs1, 1), 1))
-  # data <- data %>% select(dt, pal2maly, trend, topi.t1, noaa.t1, usdmyr.t1,
+  # abt$topi.t1 <- lag(abt$topi, 1)
+  # abt$noaa.t1 <- lag(abt$noaa, 1)
+  # abt$usdmyr.t1 <- lag(abt$usdmyr, 1)
+  # abt$usdmyr.d1t1 <- c(NA, lag(diff(abt$usdmyr, 1), 1))
+  # abt$co1.t1 <- lag(abt$co1, 1)
+  # abt$co1.d1t1 <- c(NA, lag(diff(abt$co1, 1), 1))
+  # abt$qs1.t1 <- lag(abt$qs1, 1)
+  # abt$qs1.d1t1 <- c(NA, lag(diff(abt$qs1, 1), 1))
+  # abt <- abt %>% select(dt, pal2maly, trend, topi.t1, noaa.t1, usdmyr.t1,
   #                         usdmyr.t1, usdmyr.d1t1, co1.t1, co1.d1t1,
   #                         qs1.t1, qs1.d1t1)
   # Replace initial NA values with mean
-  # for(var in colnames(data[, -1]))
-  #   data[is.na(data[, var]), var] <- mean(data[, var], na.rm = T)
+  # for(var in colnames(abt[, -1]))
+  #   abt[is.na(abt[, var]), var] <- mean(abt[, var], na.rm = T)
   # Exogeneous variables using daily data can be added here if needed
   
-  return(data)
+  return(list(daily = daily, monthly = monthly, abt = abt))
 }

@@ -1,5 +1,6 @@
 # Source Directory
-setwd("./path/to/this/script")
+args <- commandArgs(T)
+setwd(args[1])
 
 library(plumber)
 r <- plumb("api.R")
