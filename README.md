@@ -14,5 +14,5 @@ Note:
 * This setup requires PostgreSQL, R, Python and Airflow to be installed in local server
 * The outputs displayed in browser are T+1, T+2 and T+3 forecasts in array, unboxed JSON
 * R console outputs are exported to *~/Kenanga/ROutput.txt*
-* To study the entire flow of this exercise, repeat **Steps to Start API** by copying *cpo_localrun.py* and trigger *cpo_localrun* DAG
+* To run the process without API, repeat **Steps to Start API** by copying *cpo_localrun.py* and trigger *cpo_localrun* DAG
 * To run R scripts in local machine, modify arguments of `setwd` in *localRun.R* and *serve.R* to the scripts' directory
