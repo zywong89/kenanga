@@ -11,6 +11,7 @@
 
 
 Note:
-* This setup requires PostgreSQL 12, R, Python and Airflow to be installed in local machine
-* The outputs are T+1, T+2 and T+3 forecasts in array, unboxed JSON
-* To study the entire flow of this exercise, repeat "Steps to Start API" by copying *cpo_localrun.py* and trigger *cpo_localrun* DAG
+* This setup requires PostgreSQL, R, Python and Airflow to be installed in local server (e.g. Ubuntu)
+* The outputs displayed in browser are T+1, T+2 and T+3 forecasts in array, unboxed JSON
+* To study the entire flow of this exercise, repeat **Steps to Start API** by copying *cpo_localrun.py* and trigger *cpo_localrun* DAG
+* R console outputs are exported to *~/Kenanga/ROutput.txt*
